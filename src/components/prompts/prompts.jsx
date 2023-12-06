@@ -9,7 +9,6 @@ import { useState } from "react";
 const prompts = () => {
   const api_key = import.meta.env.VITE_APP_API_KEY;
 
-  // const apiKey =JSON.stringify({import.meta.env.REACT_APP_API_KEY});
   const [prompts, setPrompts] = useState("");
   const [img, setImg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -23,10 +22,10 @@ const prompts = () => {
     const openai = new OpenAIApi(config);
 
     const result = await openai.createImage({
+      model: "dall-e-3",
       prompt: prompts,
       n: 1,
-      size: "512x512",
-      user: "sad",
+      size: "1024x1024",
     });
 
     const url = result.data.data[0].url;
@@ -49,7 +48,7 @@ const prompts = () => {
       const data = await response.json();
       console.log(data);
     };
-    senddata();
+    //senddata();
   };
 
   const handleChange = (e) => {
@@ -69,7 +68,7 @@ const prompts = () => {
         <div className="btn button2" onClick={generate} visible={false}>
           SUBMIT
         </div>
-       <div> {isLoading ? <Loader /> : null}</div>
+        <div> {isLoading ? <Loader /> : null}</div>
       </div>
       {img && (
         <div className="output">

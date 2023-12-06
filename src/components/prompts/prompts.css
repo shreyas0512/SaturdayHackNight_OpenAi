@@ -1,3 +1,11 @@
+.body {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .promptp1 {
   display: flex;
   flex-direction: column;
@@ -43,7 +51,7 @@ textarea {
   justify-content: center;
 }
 
-.output{
+.output {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,8 +60,9 @@ textarea {
   border-radius: 7px;
 }
 
-.output img{
-width: auto;
-  height: 80%;
+.output img {
+  margin-top: 500px;
+  height: 1024px;
+  width: 1024px;
   border-radius: 7px;
 }
